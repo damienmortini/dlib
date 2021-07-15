@@ -1,0 +1,51 @@
+{
+  "name": "jsdoc-to-markdown",
+  "author": "Lloyd Brookes",
+  "version": "7.0.1",
+  "description": "Generates markdown API documentation from jsdoc annotated source code",
+  "repository": "https://github.com/jsdoc2md/jsdoc-to-markdown",
+  "bin": {
+    "jsdoc2md": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "test-runner test/*.js",
+    "docs": "node bin/cli.js --heading-depth 1 index.js > docs/API.md",
+    "cover": "istanbul cover ./node_modules/.bin/test-runner test/*.js && cat coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage; echo"
+  },
+  "keywords": [
+    "jsdoc",
+    "markdown",
+    "api",
+    "generator",
+    "javascript",
+    "js",
+    "documentation"
+  ],
+  "dependencies": {
+    "array-back": "^5.0.0",
+    "command-line-tool": "^0.8.0",
+    "config-master": "^3.1.0",
+    "dmd": "^6.0.0",
+    "jsdoc-api": "^7.0.0",
+    "jsdoc-parse": "^6.0.0",
+    "walk-back": "^5.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "test-runner": "^0.8.14"
+  },
+  "standard": {
+    "ignore": [
+      "test/fixture"
+    ]
+  },
+  "files": [
+    "index.js",
+    "bin/cli.js",
+    "lib/*.js"
+  ]
+}
